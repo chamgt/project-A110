@@ -11,11 +11,12 @@ public class StudentView extends JPanel implements ActionListener {
 	
 	public StudentView(MainFrame parent) {
 		
+		
 	}
 
 	@Override
-	public void actionPerformed(ActionEvent arg0) {
-		// TODO Auto-generated method stub
+	public void actionPerformed(ActionEvent ae) {
+		String action = ae.getActionCommand();
 		
 	}
 

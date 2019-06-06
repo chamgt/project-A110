@@ -13,6 +13,7 @@ import java.awt.event.ActionListener;
 import javax.swing.JMenuBar;
 import javax.swing.JMenu;
 import javax.swing.JMenuItem;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import net.miginfocom.swing.MigLayout;
 import com.jgoodies.forms.layout.FormLayout;
@@ -67,9 +68,12 @@ public class MainFrame extends JFrame implements ActionListener {
 		}
 		if (action.equals("LogOut")) {
 			System.out.println("Log Out");
+			String msg = "Loging out !";
+			JOptionPane.showMessageDialog(this, msg);
 		}
 		if (action.equals("Exit")) {
 			System.out.println("Exit");
+			System.exit(0);
 		}
 	}
 	
