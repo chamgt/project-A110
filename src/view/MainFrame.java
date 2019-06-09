@@ -29,10 +29,14 @@ public class MainFrame extends JFrame implements ActionListener {
 	public MainFrame(UserController userController, TimeTableController tTController) {
 		
 		super("Welcome to My Time Table App");
+		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		this.setLocationRelativeTo(null);
 		this.userController=userController;
 		this.timeTableController=tTController;
 		
-		setSize(1200, 1000);
+		
+		setSize(800, 700);
+		this.setLocationRelativeTo(null);
 
 		JMenuBar menuBar = new JMenuBar();
 		setJMenuBar(menuBar);

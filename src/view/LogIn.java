@@ -31,6 +31,7 @@ public class LogIn extends JDialog implements ActionListener {
 		this.mainFrame = parent;
 		setTitle("Connexion");
 		setBounds(400, 200, 400, 150);
+		this.setLocationRelativeTo(null);
 		getContentPane().setLayout(new BorderLayout());
 		contentPanel.setToolTipText("Username");
 		contentPanel.setBorder(new EmptyBorder(5, 5, 5, 5));
@@ -92,15 +93,16 @@ public class LogIn extends JDialog implements ActionListener {
 				int group = mainFrame.getUserController().getStudentGroup(username);
 				if (group == -1) {
 					String msg = "You are now connected as " + mainFrame.getUserController().getUserName(username)
-							+ "\n" + "You are not affected to a group";
+							+ "\n" + "You are not affected to a group, ask to an admin";
 					JOptionPane.showMessageDialog(mainFrame, msg);
 					dispose();
 				} else {
 					String msg = "You are now connected as " + mainFrame.getUserController().getUserName(username)
 							+ "\n" + "You are in group " + group;
 					JOptionPane.showMessageDialog(mainFrame, msg);
-					
 					dispose();
+					mainFrame.setContentPane(new StudentView(mainFrame, group));
+					mainFrame.setVisible(true);
 				}
 
 				System.out.println(group);
