@@ -62,6 +62,10 @@ public class MainFrame extends JFrame implements ActionListener {
 		setVisible(true);
 	}
 
+	public TimeTableController getTimeTableController() {
+		return timeTableController;
+	}
+
 	@Override
 	public void actionPerformed(ActionEvent ae) {
 		String action = ae.getActionCommand();
@@ -84,4 +88,5 @@ public class MainFrame extends JFrame implements ActionListener {
 	public UserController getUserController() {
 		return userController;
 	}
+	
 }

@@ -13,22 +13,22 @@ import javax.swing.border.EmptyBorder;
 import javax.swing.JScrollPane;
 import javax.swing.JList;
 
-public class showUsers extends JDialog implements ActionListener {
+public class Show extends JDialog implements ActionListener {
 
 	private final JPanel contentPanel = new JPanel();
-	private String[] listUsers;
+	private String[] data;
 
-	public showUsers(MainFrame parent, boolean modal) {
+	public Show(MainFrame parent,boolean modal,String title, String[] data) {
 		super(parent, modal);
+		setTitle(title);
 		setBounds(100, 100, 450, 300);
 		getContentPane().setLayout(new BorderLayout());
 		contentPanel.setLayout(new FlowLayout());
 		contentPanel.setBorder(new EmptyBorder(5, 5, 5, 5));
-		listUsers=parent.getUserController().usersToString();
-		System.out.println(Arrays.toString(listUsers));
+
 		getContentPane().add(contentPanel, BorderLayout.CENTER);
 		{
-			JList<String> list = new JList<String>(listUsers);
+			JList<String> list = new JList<String>(data);
 			contentPanel.add(list);
 		}
 		{

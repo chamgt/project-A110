@@ -2,6 +2,7 @@ package view;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.Arrays;
 
 import javax.swing.JPanel;
 import javax.swing.BoxLayout;
@@ -64,6 +65,8 @@ public class AdminView extends JPanel implements ActionListener {
 		gbc_btnAddAStudent.gridx = 5;
 		gbc_btnAddAStudent.gridy = 3;
 		adminUsers.add(btnAddAStudent, gbc_btnAddAStudent);
+		btnAddAStudent.setActionCommand("addStudent");
+		btnAddAStudent.addActionListener(this);
 		
 		JButton btnAddATeacher = new JButton("Add a teacher");
 		GridBagConstraints gbc_btnAddATeacher = new GridBagConstraints();
@@ -71,6 +74,8 @@ public class AdminView extends JPanel implements ActionListener {
 		gbc_btnAddATeacher.gridx = 5;
 		gbc_btnAddATeacher.gridy = 4;
 		adminUsers.add(btnAddATeacher, gbc_btnAddATeacher);
+		btnAddATeacher.setActionCommand("addTeacher");
+		btnAddATeacher.addActionListener(this);
 		
 		JButton btnAddAnAdmin = new JButton("Add an admin");
 		GridBagConstraints gbc_btnAddAnAdmin = new GridBagConstraints();
@@ -78,12 +83,16 @@ public class AdminView extends JPanel implements ActionListener {
 		gbc_btnAddAnAdmin.gridx = 5;
 		gbc_btnAddAnAdmin.gridy = 5;
 		adminUsers.add(btnAddAnAdmin, gbc_btnAddAnAdmin);
+		btnAddAnAdmin.setActionCommand("addAdmin");
+		btnAddAnAdmin.addActionListener(this);
 		
 		JButton btnRemoveUser = new JButton("Remove user");
 		GridBagConstraints gbc_btnRemoveUser = new GridBagConstraints();
 		gbc_btnRemoveUser.gridx = 5;
 		gbc_btnRemoveUser.gridy = 6;
 		adminUsers.add(btnRemoveUser, gbc_btnRemoveUser);
+		btnRemoveUser.setActionCommand("removeUser");
+		btnRemoveUser.addActionListener(this);
 		
 		JPanel adminGroups = new JPanel();
 		tabbedPane.addTab("Administrate Groups", null, adminGroups, null);
@@ -109,6 +118,8 @@ public class AdminView extends JPanel implements ActionListener {
 		gbc_btnAddGroup.gridx = 4;
 		gbc_btnAddGroup.gridy = 4;
 		adminGroups.add(btnAddGroup, gbc_btnAddGroup);
+		btnAddGroup.setActionCommand("addGroup");
+		btnAddGroup.addActionListener(this);
 		
 		JButton btnRemoveGroup = new JButton("Remove Group");
 		GridBagConstraints gbc_btnRemoveGroup = new GridBagConstraints();
@@ -116,12 +127,16 @@ public class AdminView extends JPanel implements ActionListener {
 		gbc_btnRemoveGroup.gridx = 4;
 		gbc_btnRemoveGroup.gridy = 5;
 		adminGroups.add(btnRemoveGroup, gbc_btnRemoveGroup);
+		btnRemoveGroup.setActionCommand("removeGroup");
+		btnRemoveGroup.addActionListener(this);
 		
 		JButton btnAssociateStudentTo = new JButton("Associate student to a group");
 		GridBagConstraints gbc_btnAssociateStudentTo = new GridBagConstraints();
 		gbc_btnAssociateStudentTo.gridx = 4;
 		gbc_btnAssociateStudentTo.gridy = 6;
 		adminGroups.add(btnAssociateStudentTo, gbc_btnAssociateStudentTo);
+		btnAssociateStudentTo.setActionCommand("associateStudent");
+		btnAssociateStudentTo.addActionListener(this);
 		
 		JPanel adminRooms = new JPanel();
 		tabbedPane.addTab("Administrate Rooms", null, adminRooms, null);
@@ -138,23 +153,25 @@ public class AdminView extends JPanel implements ActionListener {
 		gbc_btnShowRooms.gridx = 5;
 		gbc_btnShowRooms.gridy = 3;
 		adminRooms.add(btnShowRooms, gbc_btnShowRooms);
+		btnShowRooms.setActionCommand("showRooms");
+		btnShowRooms.addActionListener(this);
 		
 		JButton btnAddRoom = new JButton("Add room");
-		btnAddRoom.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-			}
-		});
 		GridBagConstraints gbc_btnAddRoom = new GridBagConstraints();
 		gbc_btnAddRoom.insets = new Insets(0, 0, 5, 0);
 		gbc_btnAddRoom.gridx = 5;
 		gbc_btnAddRoom.gridy = 4;
 		adminRooms.add(btnAddRoom, gbc_btnAddRoom);
+		btnAddRoom.setActionCommand("addRoom");
+		btnAddRoom.addActionListener(this);
 		
 		JButton btnRemoveRoom = new JButton("Remove room");
 		GridBagConstraints gbc_btnRemoveRoom = new GridBagConstraints();
 		gbc_btnRemoveRoom.gridx = 5;
 		gbc_btnRemoveRoom.gridy = 5;
 		adminRooms.add(btnRemoveRoom, gbc_btnRemoveRoom);
+		btnRemoveRoom.setActionCommand("removeRoom");
+		btnRemoveRoom.addActionListener(this);
 	}
 
 	@Override
@@ -163,10 +180,24 @@ public class AdminView extends JPanel implements ActionListener {
 		System.out.println(action);
 		switch(action) {
 		case "showUsers":
-			System.out.println("ça marche");
-			showUsers dialogShowUsers = new showUsers(mainFrame,true);
+			String[] listUsers=mainFrame.getUserController().usersToString();
+			Show dialogShowUsers = new Show(mainFrame,true,"Users",listUsers);
 			dialogShowUsers.setVisible(true);
 			break;
+		case "showGroups":
+			String[] listGroups=mainFrame.getUserController().groupsToString();
+			Show dialogShowGroups = new Show(mainFrame,true,"Groups",listGroups);
+			dialogShowGroups.setVisible(true);
+			break;
+		case "showRooms":
+			String[] listRooms=mainFrame.getTimeTableController().roomsToString();
+			Show dialogShowRooms = new Show(mainFrame,true,"Groups",listRooms);
+			dialogShowRooms.setVisible(true);
+			break;
+		case "addStudent":
+//			Show dialogAddStudent = new addStudent(mainFrame,true);
+//			dialogAddStudent.setVisible(true);
+//			break;
 		}
 	}
 
