@@ -48,10 +48,10 @@
       <adminId>2</adminId>
     </Administrator>
     <Administrator>
-      <login>KF</login>
+      <login>AA</login>
       <firstname>Kevin</firstname>
       <surname>Flynn</surname>
-      <pwd>@tron</pwd>
+      <pwd>aa</pwd>
       <adminId>1</adminId>
     </Administrator>
     <Administrator>

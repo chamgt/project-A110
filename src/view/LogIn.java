@@ -111,6 +111,9 @@ public class LogIn extends JDialog implements ActionListener {
 				String msg = "Hello " + mainFrame.getUserController().getUserName(username) + "\n"
 						+ "You are now connected as Administrator";
 				JOptionPane.showMessageDialog(mainFrame, msg);
+				mainFrame.setContentPane(new AdminView(mainFrame));
+				mainFrame.setVisible(true);
+				
 			} else if (mainFrame.getUserController().getUserClass(username, password).equals("Teacher")) {
 				String msg = "You are now connected as " + mainFrame.getUserController().getUserName(username);
 				JOptionPane.showMessageDialog(mainFrame, msg);
@@ -121,6 +124,7 @@ public class LogIn extends JDialog implements ActionListener {
 			System.out.println("Cancel");
 			dispose();
 		}
+		dispose();
 
 	}
 }

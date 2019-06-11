@@ -11,6 +11,7 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JSeparator;
 
 
 public class StudentView extends JPanel implements ActionListener {
@@ -24,7 +25,7 @@ public class StudentView extends JPanel implements ActionListener {
 	public StudentView(MainFrame parent, int group) {
 		parent.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		parent.setLocationRelativeTo(null);
-		parent.setLayout(new BorderLayout());
+		parent.getContentPane().setLayout(new BorderLayout());
 		PreviousWeek.setActionCommand("PreviousWeek");
 		NextWeek.setActionCommand("NextWeek");
 		NextWeek.addActionListener(this);
