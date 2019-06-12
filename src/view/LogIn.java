@@ -83,6 +83,8 @@ public class LogIn extends JDialog implements ActionListener {
 		if (action.equals("OK")) {
 			String username = txtUsername.getText();
 			String password = pswPassword.getText();
+			mainFrame.user_login = username;
+			System.out.println("user_login :" + mainFrame.user_login);
 			System.out.println(username);
 			System.out.println(password);
 			System.out.println(mainFrame.getUserController().getUserClass(username, password));

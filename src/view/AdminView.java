@@ -195,9 +195,9 @@ public class AdminView extends JPanel implements ActionListener {
 			dialogShowRooms.setVisible(true);
 			break;
 		case "addStudent":
-//			Show dialogAddStudent = new addStudent(mainFrame,true);
-//			dialogAddStudent.setVisible(true);
-//			break;
+			addStudent dialogAddStudent = new addStudent(mainFrame,true);
+			dialogAddStudent.setVisible(true);
+			break;
 		}
 	}
 

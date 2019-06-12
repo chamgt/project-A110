@@ -7,6 +7,14 @@
   </Groups>
   <Students>
     <Student>
+      <login>a</login>
+      <firstname>a</firstname>
+      <surname>a</surname>
+      <pwd>a</pwd>
+      <studentId>5</studentId>
+      <groupId>-1</groupId>
+    </Student>
+    <Student>
       <login>NL</login>
       <firstname>Nicolas</firstname>
       <surname>Lepetit</surname>
@@ -48,18 +56,18 @@
       <adminId>2</adminId>
     </Administrator>
     <Administrator>
-      <login>AA</login>
-      <firstname>Kevin</firstname>
-      <surname>Flynn</surname>
-      <pwd>aa</pwd>
-      <adminId>1</adminId>
-    </Administrator>
-    <Administrator>
       <login>su</login>
       <firstname>su</firstname>
       <surname>su</surname>
       <pwd>superUser</pwd>
       <adminId>0</adminId>
+    </Administrator>
+    <Administrator>
+      <login>AA</login>
+      <firstname>Kevin</firstname>
+      <surname>Flynn</surname>
+      <pwd>aa</pwd>
+      <adminId>1</adminId>
     </Administrator>
   </Administrators>
 </UsersDB>

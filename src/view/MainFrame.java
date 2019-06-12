@@ -25,6 +25,7 @@ public class MainFrame extends JFrame implements ActionListener {
 	private static final long serialVersionUID = 1L;
 	private UserController userController;	
 	private TimeTableController timeTableController;
+	protected String user_login;
 	
 	public MainFrame(UserController userController, TimeTableController tTController) {
 		
@@ -33,6 +34,7 @@ public class MainFrame extends JFrame implements ActionListener {
 		this.setLocationRelativeTo(null);
 		this.userController=userController;
 		this.timeTableController=tTController;
+		
 		
 		
 		setSize(800, 700);
@@ -76,6 +78,7 @@ public class MainFrame extends JFrame implements ActionListener {
 		}
 		if (action.equals("LogOut")) {
 			System.out.println("Log Out");
+			this.user_login="";
 			String msg = "Loging out !";
 			JOptionPane.showMessageDialog(this, msg);
 		}
