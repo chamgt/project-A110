@@ -3,6 +3,7 @@ package view;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Dimension;
+import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -24,28 +25,33 @@ public class StudentView extends JPanel implements ActionListener {
 
 	public StudentView(MainFrame parent, int group) {
 		parent.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		parent.setLocationRelativeTo(null);
 		parent.getContentPane().setLayout(new BorderLayout());
+		parent.setBounds(100, 100, 475, 300);
+		parent.setLocationRelativeTo(null);
+		
+		contentPanel.setBounds(225, 5, 0, 0);
+		contentPanel.setLayout(new BorderLayout());
+		contentPanel.setVisible(true);
+		setLayout(null);
+		add(contentPanel);
+		
 		PreviousWeek.setActionCommand("PreviousWeek");
 		NextWeek.setActionCommand("NextWeek");
 		NextWeek.addActionListener(this);
 		
 		
-		label = new JLabel("The planning of the group "+group);
-		contentPanel.add(label);
-		contentPanel.setBackground(Color.WHITE);
-		add	(contentPanel);
+		label = new JLabel("The planning of the group "+group+" :");
+		label.setFont(new Font("Tahoma", Font.PLAIN, 12));
+		label.setBounds(143, 32, 186, 14);
 		
-		add(Box.createRigidArea(new Dimension(100,25)));
-		contentPanel = new JPanel();
-		contentPanel.setLayout(new BorderLayout());
+		add(label);
 		
-		contentPanel.setVisible(true);
-		contentPanel.add(PreviousWeek, BorderLayout.WEST);
+		PreviousWeek.setBounds(22, 114, 118, 42);
+		NextWeek.setBounds(310, 114, 118, 42);
+		add(PreviousWeek);
 		PreviousWeek.addActionListener(this);
-		contentPanel.add(NextWeek, BorderLayout.EAST);
-		add(contentPanel);
-		add(Box.createRigidArea(new Dimension(100,50)));
+		add(NextWeek);
+
 	
 	}
 
