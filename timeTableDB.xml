@@ -2,6 +2,18 @@
 <TimeTablesDB>
   <Rooms>
     <Room>
+      <RoomId>7</RoomId>
+      <Capacity>60</Capacity>
+    </Room>
+    <Room>
+      <RoomId>50</RoomId>
+      <Capacity>120</Capacity>
+    </Room>
+    <Room>
+      <RoomId>3</RoomId>
+      <Capacity>150</Capacity>
+    </Room>
+    <Room>
       <RoomId>2</RoomId>
       <Capacity>100</Capacity>
     </Room>
@@ -12,15 +24,12 @@
   </Rooms>
   <TimeTables>
     <TimeTable>
+      <GroupId>2</GroupId>
+      <Books />
+    </TimeTable>
+    <TimeTable>
       <GroupId>1</GroupId>
       <Books>
-        <Book>
-          <BookingId>4</BookingId>
-          <Login>GS</Login>
-          <DateBegin>16/05/2017 08:00:03</DateBegin>
-          <DateEnd>16/05/2017 12:00:03</DateEnd>
-          <RoomId>3</RoomId>
-        </Book>
         <Book>
           <BookingId>3</BookingId>
           <Login>MF</Login>

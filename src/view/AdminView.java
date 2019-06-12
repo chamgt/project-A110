@@ -218,6 +218,10 @@ public class AdminView extends JPanel implements ActionListener {
 			RemoveGroup dialogRemoveGroup = new RemoveGroup(mainFrame,true);
 			dialogRemoveGroup.setVisible(true);
 			break;
+		case "addRoom":
+			AddRoom dialogAddRoom = new AddRoom(mainFrame,true);
+			dialogAddRoom.setVisible(true);
+			break;
 		}
 	}
 
