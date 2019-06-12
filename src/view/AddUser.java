@@ -27,8 +27,8 @@ public abstract class AddUser extends JDialog implements ActionListener {
 	protected MainFrame mainFrame;
 
 	public AddUser(MainFrame mainFrame, boolean modal) {
-		super(mainFrame,modal);
-		this.mainFrame=mainFrame;
+		super(mainFrame, modal);
+		this.mainFrame = mainFrame;
 		setBounds(100, 100, 450, 300);
 		getContentPane().setLayout(new BorderLayout());
 		contentPanel.setBorder(new EmptyBorder(5, 5, 5, 5));
@@ -164,9 +164,10 @@ public abstract class AddUser extends JDialog implements ActionListener {
 		System.out.println("user_login :" + mainFrame.toString());
 		if (action.equals("Cancel")) {
 			dispose();
-		}
-		else if (action.equals("OK")) {
-			add(mainFrame.user_login,newUserLogin.getText(),Integer.parseInt(id.getText()),firstname.getText(),surname.getText(),password.getText());
+		} else if (action.equals("OK")) {
+			add(mainFrame.user_login, newUserLogin.getText(), Integer.parseInt(id.getText()), firstname.getText(),
+					surname.getText(), password.getText());
+			dispose();
 		}
 	}
 }
