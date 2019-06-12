@@ -22,14 +22,6 @@
       <studentId>2002</studentId>
       <groupId>-1</groupId>
     </Student>
-    <Student>
-      <login>a</login>
-      <firstname>a</firstname>
-      <surname>a</surname>
-      <pwd>a</pwd>
-      <studentId>5</studentId>
-      <groupId>-1</groupId>
-    </Student>
   </Students>
   <Teachers>
     <Teacher>
@@ -38,13 +30,6 @@
       <surname>Freeman</surname>
       <pwd>iknowall</pwd>
       <teacherId>1002</teacherId>
-    </Teacher>
-    <Teacher>
-      <login>test</login>
-      <firstname>Z</firstname>
-      <surname>Z</surname>
-      <pwd>test</pwd>
-      <teacherId>8</teacherId>
     </Teacher>
     <Teacher>
       <login>GS</login>
