@@ -9,6 +9,8 @@ import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import java.awt.GridBagLayout;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+
 import java.awt.GridBagConstraints;
 import java.awt.Insets;
 import java.awt.event.ActionEvent;
@@ -167,6 +169,7 @@ public abstract class AddUser extends JDialog implements ActionListener {
 		} else if (action.equals("OK")) {
 			add(mainFrame.user_login, newUserLogin.getText(), Integer.parseInt(id.getText()), firstname.getText(),
 					surname.getText(), password.getText());
+			JOptionPane.showMessageDialog(null, "User added");
 			dispose();
 		}
 	}
