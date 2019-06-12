@@ -73,7 +73,7 @@ public class MainFrame extends JFrame implements ActionListener {
 		String action = ae.getActionCommand();
 		if (action.equals("LogIn")) {
 			System.out.println("Log in");
-			LogIn dialogLogin = new LogIn(this, true);
+			LogIn dialogLogin = new LogIn(this, true, userController, timeTableController);
 			dialogLogin.setVisible(true);
 		}
 		if (action.equals("LogOut")) {

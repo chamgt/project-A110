@@ -15,10 +15,14 @@ import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 import javax.swing.JPasswordField;
 import net.miginfocom.swing.MigLayout;
+import timeTableController.TimeTableController;
+import userController.UserController;
 
 public class LogIn extends JDialog implements ActionListener {
 
 	private final JPanel contentPanel = new JPanel();
+	private UserController userController;	
+	private TimeTableController timeTableController;
 	private JTextField txtUsername;
 	private JPasswordField pswPassword;
 	private MainFrame mainFrame;
@@ -26,9 +30,11 @@ public class LogIn extends JDialog implements ActionListener {
 	/**
 	 * Create the dialog.
 	 */
-	public LogIn(MainFrame parent, boolean modal) {
+	public LogIn(MainFrame parent, boolean modal, UserController userController, TimeTableController tTController) {
 		super(parent, modal);
 		this.mainFrame = parent;
+		this.userController=userController;
+		this.timeTableController=tTController;
 		setTitle("Connexion");
 		setBounds(400, 200, 400, 150);
 		this.setLocationRelativeTo(null);
@@ -119,6 +125,8 @@ public class LogIn extends JDialog implements ActionListener {
 			} else if (mainFrame.getUserController().getUserClass(username, password).equals("Teacher")) {
 				String msg = "You are now connected as " + mainFrame.getUserController().getUserName(username);
 				JOptionPane.showMessageDialog(mainFrame, msg);
+				mainFrame.setContentPane(new TeacherView(mainFrame, username, userController, timeTableController));
+				mainFrame.setVisible(true);
 			}
 
 		}
