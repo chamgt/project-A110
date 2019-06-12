@@ -57,7 +57,7 @@ public class TeacherView extends JPanel implements ActionListener {
 	public void actionPerformed(ActionEvent ae) {
 		String action = ae.getActionCommand();
 		  if(action.equals("Unbook")){
-			  System.out.println("Unbook");
+			  mainFrame.setContentPane(new TeacherUnbook(mainFrame, teacherLogin, userController, timeTableController));
 		  }
 
 			  if(action.equals("Book")){
