@@ -2,18 +2,16 @@
 <UsersDB>
   <Groups>
     <Group>
+      <groupId>3</groupId>
+    </Group>
+    <Group>
+      <groupId>2</groupId>
+    </Group>
+    <Group>
       <groupId>1</groupId>
     </Group>
   </Groups>
   <Students>
-    <Student>
-      <login>BS</login>
-      <firstname>Buffy</firstname>
-      <surname>Summers</surname>
-      <pwd>stake</pwd>
-      <studentId>2001</studentId>
-      <groupId>1</groupId>
-    </Student>
     <Student>
       <login>NL</login>
       <firstname>Nicolas</firstname>
@@ -22,21 +20,29 @@
       <studentId>2002</studentId>
       <groupId>-1</groupId>
     </Student>
+    <Student>
+      <login>BS</login>
+      <firstname>Buffy</firstname>
+      <surname>Summers</surname>
+      <pwd>stake</pwd>
+      <studentId>2001</studentId>
+      <groupId>1</groupId>
+    </Student>
   </Students>
   <Teachers>
-    <Teacher>
-      <login>MF</login>
-      <firstname>Morgan</firstname>
-      <surname>Freeman</surname>
-      <pwd>iknowall</pwd>
-      <teacherId>1002</teacherId>
-    </Teacher>
     <Teacher>
       <login>GS</login>
       <firstname>Grand</firstname>
       <surname>Schtroumpf</surname>
       <pwd>salsepareille</pwd>
       <teacherId>1001</teacherId>
+    </Teacher>
+    <Teacher>
+      <login>MF</login>
+      <firstname>Morgan</firstname>
+      <surname>Freeman</surname>
+      <pwd>iknowall</pwd>
+      <teacherId>1002</teacherId>
     </Teacher>
   </Teachers>
   <Administrators>
@@ -46,6 +52,13 @@
       <surname>Reeves</surname>
       <pwd>redpill</pwd>
       <adminId>2</adminId>
+    </Administrator>
+    <Administrator>
+      <login>su</login>
+      <firstname>su</firstname>
+      <surname>su</surname>
+      <pwd>superUser</pwd>
+      <adminId>0</adminId>
     </Administrator>
     <Administrator>
       <login>AA</login>
@@ -60,13 +73,6 @@
       <surname>Toto</surname>
       <pwd>test</pwd>
       <adminId>4</adminId>
-    </Administrator>
-    <Administrator>
-      <login>su</login>
-      <firstname>su</firstname>
-      <surname>su</surname>
-      <pwd>superUser</pwd>
-      <adminId>0</adminId>
     </Administrator>
   </Administrators>
 </UsersDB>
