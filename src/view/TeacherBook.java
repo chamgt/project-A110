@@ -239,7 +239,7 @@ public class TeacherBook extends JDialog implements ActionListener {
 					+ txtMinuteEnd.getText();
 
 			Date dateDeb = null;
-			Integer bookId = 1 + this.mainFrame.getTimeTableController().getBookingsMaxId(this.tableId);
+			Integer bookId = this.mainFrame.getTimeTableController().getBookingsMaxId(this.tableId);
 
 			try {
 				dateDeb = format.parse(txtDateDeb);
@@ -262,6 +262,7 @@ public class TeacherBook extends JDialog implements ActionListener {
 			this.mainFrame.getTimeTableController().addBooking(this.tableId, bookId, this.mainFrame.user_login, dateDeb,
 					dateFin, room);
 			JOptionPane.showMessageDialog(null, "The book has been added to group " + tableId.toString() +".");
+			dispose();
 
 		} else if (action.equals("Cancel")) {
 			dispose();

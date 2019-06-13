@@ -175,6 +175,7 @@ public abstract class AddUser extends JDialog implements ActionListener {
 			if (login && surnameB && firstnameB && passwordB && idB) {
 				add(mainFrame.user_login, newUserLogin.getText(), Integer.parseInt(id.getText()), firstname.getText(),
 						surname.getText(), password.getText());
+				dispose();
 			} else {
 
 				JOptionPane.showMessageDialog(mainFrame,

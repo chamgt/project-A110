@@ -97,6 +97,7 @@ public class LogIn extends JDialog implements ActionListener {
 			if (mainFrame.getUserController().getUserClass(username, password).equals("")) {
 				JOptionPane.showMessageDialog(mainFrame, "Login or username incorrect.", "Login error",
 						JOptionPane.ERROR_MESSAGE);
+				
 			} else if (mainFrame.getUserController().getUserClass(username, password).equals("Student")) {
 				int group = mainFrame.getUserController().getStudentGroup(username);
 				if (group == -1) {
@@ -113,8 +114,6 @@ public class LogIn extends JDialog implements ActionListener {
 					mainFrame.setVisible(true);
 				}
 
-				System.out.println(group);
-				dispose();
 			} else if (mainFrame.getUserController().getUserClass(username, password).equals("Administrator")) {
 				String msg = "Hello " + mainFrame.getUserController().getUserName(username) + "\n"
 						+ "You are now connected as Administrator";

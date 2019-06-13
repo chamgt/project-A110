@@ -13,6 +13,14 @@
   </Groups>
   <Students>
     <Student>
+      <login>BB</login>
+      <firstname>b</firstname>
+      <surname>B</surname>
+      <pwd>bb</pwd>
+      <studentId>8</studentId>
+      <groupId>-1</groupId>
+    </Student>
+    <Student>
       <login>BS</login>
       <firstname>Buffy</firstname>
       <surname>Summers</surname>
@@ -27,6 +35,14 @@
       <pwd>prout</pwd>
       <studentId>2002</studentId>
       <groupId>-1</groupId>
+    </Student>
+    <Student>
+      <login>studentgrp1</login>
+      <firstname>studentgrp1</firstname>
+      <surname>studentgrp1</surname>
+      <pwd>studentgrp1</pwd>
+      <studentId>4</studentId>
+      <groupId>1</groupId>
     </Student>
     <Student>
       <login>z</login>

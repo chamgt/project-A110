@@ -15,6 +15,8 @@ import javax.swing.JMenu;
 import javax.swing.JMenuItem;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
+import javax.swing.SwingUtilities;
+
 import net.miginfocom.swing.MigLayout;
 import com.jgoodies.forms.layout.FormLayout;
 import com.jgoodies.forms.layout.ColumnSpec;
@@ -23,20 +25,18 @@ import com.jgoodies.forms.layout.RowSpec;
 public class MainFrame extends JFrame implements ActionListener {
 
 	private static final long serialVersionUID = 1L;
-	private UserController userController;	
+	private UserController userController;
 	private TimeTableController timeTableController;
 	protected String user_login;
-	
+
 	public MainFrame(UserController userController, TimeTableController tTController) {
-		
+
 		super("Welcome to My Time Table App");
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		this.setLocationRelativeTo(null);
-		this.userController=userController;
-		this.timeTableController=tTController;
-		
-		
-		
+		this.userController = userController;
+		this.timeTableController = tTController;
+
 		setSize(800, 700);
 		this.setLocationRelativeTo(null);
 
@@ -78,7 +78,9 @@ public class MainFrame extends JFrame implements ActionListener {
 		}
 		if (action.equals("LogOut")) {
 			System.out.println("Log Out");
-			this.user_login="";
+			this.user_login = "";
+			this.getContentPane().removeAll();
+			this.repaint();
 			String msg = "Loging out !";
 			JOptionPane.showMessageDialog(this, msg);
 		}
@@ -87,9 +89,9 @@ public class MainFrame extends JFrame implements ActionListener {
 			System.exit(0);
 		}
 	}
-	
+
 	public UserController getUserController() {
 		return userController;
 	}
-	
+
 }
