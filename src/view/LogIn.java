@@ -125,7 +125,7 @@ public class LogIn extends JDialog implements ActionListener {
 			} else if (mainFrame.getUserController().getUserClass(username, password).equals("Teacher")) {
 				String msg = "You are now connected as " + mainFrame.getUserController().getUserName(username);
 				JOptionPane.showMessageDialog(mainFrame, msg);
-				mainFrame.setContentPane(new TeacherView(mainFrame, username, userController, timeTableController));
+				mainFrame.setContentPane(new TeacherView(mainFrame));
 				mainFrame.setVisible(true);
 			}
 

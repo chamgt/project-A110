@@ -21,17 +21,12 @@ import java.awt.GridBagConstraints;
 import java.awt.Insets;
 
 public class TeacherView extends JPanel implements ActionListener {
-	private static String teacherLogin = null;
-	private MainFrame mainFrame;
-	private UserController userController;
-	private TimeTableController timeTableController;
 
-	public TeacherView(MainFrame parent, String login, UserController userController,
-			TimeTableController tTController) {
+	private MainFrame mainFrame;
+
+
+	public TeacherView(MainFrame parent) {
 		this.mainFrame = parent;
-		teacherLogin = login;
-		this.userController = userController;
-		this.timeTableController = tTController;
 		this.mainFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		this.mainFrame.setLocationRelativeTo(null);
 
@@ -60,17 +55,13 @@ public class TeacherView extends JPanel implements ActionListener {
 	public void actionPerformed(ActionEvent ae) {
 		String action = ae.getActionCommand();
 		if (action.equals("Unbook")) {
-//			mainFrame
-//					.setContentPane(new TeacherUnbookOld(mainFrame, teacherLogin, userController, timeTableController));
-			TeacherUnBook dialogUnBook = new TeacherUnBook(mainFrame, true,1);
+			TeacherUnBook dialogUnBook = new TeacherUnBook(mainFrame, true, 1);
 			dialogUnBook.setVisible(true);
 		}
 
 		if (action.equals("Book")) {
-			TeacherBook dialogBook = new TeacherBook(mainFrame, true,1);
+			TeacherBook dialogBook = new TeacherBook(mainFrame, true, 1);
 			dialogBook.setVisible(true);
-			// mainFrame.setContentPane(new TeacherBookOld(mainFrame, teacherLogin,
-			// userController, timeTableController));
 		}
 	}
 
