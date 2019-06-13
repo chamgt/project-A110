@@ -10,6 +10,10 @@
       <Capacity>120</Capacity>
     </Room>
     <Room>
+      <RoomId>5</RoomId>
+      <Capacity>50</Capacity>
+    </Room>
+    <Room>
       <RoomId>3</RoomId>
       <Capacity>150</Capacity>
     </Room>
