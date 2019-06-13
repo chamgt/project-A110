@@ -35,6 +35,13 @@
       <GroupId>1</GroupId>
       <Books>
         <Book>
+          <BookingId>5</BookingId>
+          <Login>MF</Login>
+          <DateBegin>13/06/2019 10:15:00</DateBegin>
+          <DateEnd>13/06/2019 11:15:00</DateEnd>
+          <RoomId>7</RoomId>
+        </Book>
+        <Book>
           <BookingId>3</BookingId>
           <Login>MF</Login>
           <DateBegin>08/04/2016 16:00:00</DateBegin>
