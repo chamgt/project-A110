@@ -1,8 +1,8 @@
 package view;
 
-public class addAdmin extends AddUser {
+public class AddAdmin extends AddUser {
 
-	public addAdmin(MainFrame mainFrame, boolean modal) {
+	public AddAdmin(MainFrame mainFrame, boolean modal) {
 		super(mainFrame, modal);
 		setTitle("Add an Admin");
 	}

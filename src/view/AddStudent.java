@@ -1,8 +1,8 @@
 package view;
 
-public class addStudent extends AddUser {
+public class AddStudent extends AddUser {
 	
-	public addStudent(MainFrame mainFrame, boolean modal) {
+	public AddStudent(MainFrame mainFrame, boolean modal) {
 		super(mainFrame, modal);
 		setTitle("Add a Student");
 	}
