@@ -5,6 +5,7 @@ import java.awt.FlowLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.text.NumberFormat;
+import java.util.regex.Pattern;
 
 import javax.swing.JButton;
 import javax.swing.JDialog;
@@ -23,7 +24,6 @@ import javax.swing.Box;
 
 public class AddRoom extends JDialog implements ActionListener {
 
-	private NumberFormat numberFormat;
 	private final JPanel contentPanel = new JPanel();
 	private JTextField roomId;
 	private JTextField capacity;
@@ -130,16 +130,22 @@ public class AddRoom extends JDialog implements ActionListener {
 	@Override
 	public void actionPerformed(ActionEvent ae) {
 		String action = ae.getActionCommand();
+		boolean testEntier1 = Pattern.matches("[0-9]+", roomId.getText());
+		boolean testEntier2 = Pattern.matches("[0-9]+", capacity.getText());
+
 		if (action.equals("OK")) {
-			if (this.mainFrame.getTimeTableController().addRoom(Integer.parseInt(roomId.getText()),
-					Integer.parseInt(capacity.getText()))) {
-				JOptionPane.showMessageDialog(mainFrame, "The room is created");
-				dispose();
+			if (testEntier1 && testEntier2) {
+				boolean creation = this.mainFrame.getTimeTableController().addRoom(Integer.parseInt(roomId.getText()),
+						Integer.parseInt(capacity.getText()));
+				if (creation) {
+					JOptionPane.showMessageDialog(mainFrame, "The room is created");
+					dispose();
+				}
+			} else {
+				JOptionPane.showMessageDialog(mainFrame, "The room has not been created.", "Error",
+						JOptionPane.ERROR_MESSAGE);
 			}
-			else {
-				JOptionPane.showMessageDialog(mainFrame, "The room is not created");
-			}
-			
+
 		} else if (action.equals("Cancel")) {
 			dispose();
 		}

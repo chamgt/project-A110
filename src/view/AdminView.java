@@ -34,7 +34,7 @@ public class AdminView extends JPanel implements ActionListener {
 		gbl_adminUsers.rowWeights = new double[]{0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, Double.MIN_VALUE};
 		adminUsers.setLayout(gbl_adminUsers);
 		
-		Component verticalStrut = Box.createVerticalStrut(100);
+		Component verticalStrut = Box.createVerticalStrut(225);
 		GridBagConstraints gbc_verticalStrut = new GridBagConstraints();
 		gbc_verticalStrut.gridheight = 2;
 		gbc_verticalStrut.insets = new Insets(0, 0, 5, 0);
@@ -51,7 +51,7 @@ public class AdminView extends JPanel implements ActionListener {
 		btnShowUsers.setActionCommand("showUsers");
 		btnShowUsers.addActionListener(this);
 		
-		Component horizontalStrut_1 = Box.createHorizontalStrut(300);
+		Component horizontalStrut_1 = Box.createHorizontalStrut(275);
 		GridBagConstraints gbc_horizontalStrut_1 = new GridBagConstraints();
 		gbc_horizontalStrut_1.gridwidth = 5;
 		gbc_horizontalStrut_1.insets = new Insets(0, 0, 5, 5);
@@ -97,17 +97,31 @@ public class AdminView extends JPanel implements ActionListener {
 		JPanel adminGroups = new JPanel();
 		tabbedPane.addTab("Administrate Groups", null, adminGroups, null);
 		GridBagLayout gbl_adminGroups = new GridBagLayout();
-		gbl_adminGroups.columnWidths = new int[]{0, 0, 0, 0, 0, 0};
-		gbl_adminGroups.rowHeights = new int[]{0, 0, 0, 0, 0, 0, 0, 0};
-		gbl_adminGroups.columnWeights = new double[]{0.0, 0.0, 0.0, 0.0, 0.0, Double.MIN_VALUE};
-		gbl_adminGroups.rowWeights = new double[]{0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, Double.MIN_VALUE};
+		gbl_adminGroups.columnWidths = new int[]{0, 0, 0, 0};
+		gbl_adminGroups.rowHeights = new int[]{0, 0, 0, 0, 0, 0};
+		gbl_adminGroups.columnWeights = new double[]{0.0, 0.0, 0.0, Double.MIN_VALUE};
+		gbl_adminGroups.rowWeights = new double[]{0.0, 0.0, 0.0, 0.0, 0.0, Double.MIN_VALUE};
 		adminGroups.setLayout(gbl_adminGroups);
+		
+		Component verticalStrut_1 = Box.createVerticalStrut(225);
+		GridBagConstraints gbc_verticalStrut_1 = new GridBagConstraints();
+		gbc_verticalStrut_1.insets = new Insets(0, 0, 5, 0);
+		gbc_verticalStrut_1.gridx = 2;
+		gbc_verticalStrut_1.gridy = 0;
+		adminGroups.add(verticalStrut_1, gbc_verticalStrut_1);
+		
+		Component horizontalStrut = Box.createHorizontalStrut(275);
+		GridBagConstraints gbc_horizontalStrut = new GridBagConstraints();
+		gbc_horizontalStrut.insets = new Insets(0, 0, 5, 5);
+		gbc_horizontalStrut.gridx = 1;
+		gbc_horizontalStrut.gridy = 1;
+		adminGroups.add(horizontalStrut, gbc_horizontalStrut);
 		
 		JButton btnShowGroups = new JButton("Show groups");
 		GridBagConstraints gbc_btnShowGroups = new GridBagConstraints();
 		gbc_btnShowGroups.insets = new Insets(0, 0, 5, 0);
-		gbc_btnShowGroups.gridx = 4;
-		gbc_btnShowGroups.gridy = 3;
+		gbc_btnShowGroups.gridx = 2;
+		gbc_btnShowGroups.gridy = 1;
 		adminGroups.add(btnShowGroups, gbc_btnShowGroups);
 		btnShowGroups.setActionCommand("showGroups");
 		btnShowGroups.addActionListener(this);
@@ -115,8 +129,8 @@ public class AdminView extends JPanel implements ActionListener {
 		JButton btnAddGroup = new JButton("Add group");
 		GridBagConstraints gbc_btnAddGroup = new GridBagConstraints();
 		gbc_btnAddGroup.insets = new Insets(0, 0, 5, 0);
-		gbc_btnAddGroup.gridx = 4;
-		gbc_btnAddGroup.gridy = 4;
+		gbc_btnAddGroup.gridx = 2;
+		gbc_btnAddGroup.gridy = 2;
 		adminGroups.add(btnAddGroup, gbc_btnAddGroup);
 		btnAddGroup.setActionCommand("addGroup");
 		btnAddGroup.addActionListener(this);
@@ -124,16 +138,16 @@ public class AdminView extends JPanel implements ActionListener {
 		JButton btnRemoveGroup = new JButton("Remove Group");
 		GridBagConstraints gbc_btnRemoveGroup = new GridBagConstraints();
 		gbc_btnRemoveGroup.insets = new Insets(0, 0, 5, 0);
-		gbc_btnRemoveGroup.gridx = 4;
-		gbc_btnRemoveGroup.gridy = 5;
+		gbc_btnRemoveGroup.gridx = 2;
+		gbc_btnRemoveGroup.gridy = 3;
 		adminGroups.add(btnRemoveGroup, gbc_btnRemoveGroup);
 		btnRemoveGroup.setActionCommand("removeGroup");
 		btnRemoveGroup.addActionListener(this);
 		
 		JButton btnAssociateStudentTo = new JButton("Associate student to a group");
 		GridBagConstraints gbc_btnAssociateStudentTo = new GridBagConstraints();
-		gbc_btnAssociateStudentTo.gridx = 4;
-		gbc_btnAssociateStudentTo.gridy = 6;
+		gbc_btnAssociateStudentTo.gridx = 2;
+		gbc_btnAssociateStudentTo.gridy = 4;
 		adminGroups.add(btnAssociateStudentTo, gbc_btnAssociateStudentTo);
 		btnAssociateStudentTo.setActionCommand("associateStudent");
 		btnAssociateStudentTo.addActionListener(this);
@@ -141,17 +155,31 @@ public class AdminView extends JPanel implements ActionListener {
 		JPanel adminRooms = new JPanel();
 		tabbedPane.addTab("Administrate Rooms", null, adminRooms, null);
 		GridBagLayout gbl_adminRooms = new GridBagLayout();
-		gbl_adminRooms.columnWidths = new int[]{0, 0, 0, 0, 0, 0, 0};
-		gbl_adminRooms.rowHeights = new int[]{0, 0, 0, 0, 0, 0, 0};
-		gbl_adminRooms.columnWeights = new double[]{0.0, 0.0, 0.0, 0.0, 0.0, 0.0, Double.MIN_VALUE};
-		gbl_adminRooms.rowWeights = new double[]{0.0, 0.0, 0.0, 0.0, 0.0, 0.0, Double.MIN_VALUE};
+		gbl_adminRooms.columnWidths = new int[]{0, 0, 0};
+		gbl_adminRooms.rowHeights = new int[]{0, 0, 0, 0, 0};
+		gbl_adminRooms.columnWeights = new double[]{0.0, 0.0, Double.MIN_VALUE};
+		gbl_adminRooms.rowWeights = new double[]{0.0, 0.0, 0.0, 0.0, Double.MIN_VALUE};
 		adminRooms.setLayout(gbl_adminRooms);
+		
+		Component verticalStrut_2 = Box.createVerticalStrut(225);
+		GridBagConstraints gbc_verticalStrut_2 = new GridBagConstraints();
+		gbc_verticalStrut_2.insets = new Insets(0, 0, 5, 0);
+		gbc_verticalStrut_2.gridx = 1;
+		gbc_verticalStrut_2.gridy = 0;
+		adminRooms.add(verticalStrut_2, gbc_verticalStrut_2);
+		
+		Component horizontalStrut_2 = Box.createHorizontalStrut(275);
+		GridBagConstraints gbc_horizontalStrut_2 = new GridBagConstraints();
+		gbc_horizontalStrut_2.insets = new Insets(0, 0, 5, 5);
+		gbc_horizontalStrut_2.gridx = 0;
+		gbc_horizontalStrut_2.gridy = 1;
+		adminRooms.add(horizontalStrut_2, gbc_horizontalStrut_2);
 		
 		JButton btnShowRooms = new JButton("Show rooms");
 		GridBagConstraints gbc_btnShowRooms = new GridBagConstraints();
 		gbc_btnShowRooms.insets = new Insets(0, 0, 5, 0);
-		gbc_btnShowRooms.gridx = 5;
-		gbc_btnShowRooms.gridy = 3;
+		gbc_btnShowRooms.gridx = 1;
+		gbc_btnShowRooms.gridy = 1;
 		adminRooms.add(btnShowRooms, gbc_btnShowRooms);
 		btnShowRooms.setActionCommand("showRooms");
 		btnShowRooms.addActionListener(this);
@@ -159,16 +187,16 @@ public class AdminView extends JPanel implements ActionListener {
 		JButton btnAddRoom = new JButton("Add room");
 		GridBagConstraints gbc_btnAddRoom = new GridBagConstraints();
 		gbc_btnAddRoom.insets = new Insets(0, 0, 5, 0);
-		gbc_btnAddRoom.gridx = 5;
-		gbc_btnAddRoom.gridy = 4;
+		gbc_btnAddRoom.gridx = 1;
+		gbc_btnAddRoom.gridy = 2;
 		adminRooms.add(btnAddRoom, gbc_btnAddRoom);
 		btnAddRoom.setActionCommand("addRoom");
 		btnAddRoom.addActionListener(this);
 		
 		JButton btnRemoveRoom = new JButton("Remove room");
 		GridBagConstraints gbc_btnRemoveRoom = new GridBagConstraints();
-		gbc_btnRemoveRoom.gridx = 5;
-		gbc_btnRemoveRoom.gridy = 5;
+		gbc_btnRemoveRoom.gridx = 1;
+		gbc_btnRemoveRoom.gridy = 3;
 		adminRooms.add(btnRemoveRoom, gbc_btnRemoveRoom);
 		btnRemoveRoom.setActionCommand("removeRoom");
 		btnRemoveRoom.addActionListener(this);
@@ -225,6 +253,10 @@ public class AdminView extends JPanel implements ActionListener {
 		case "addGroup":
 			AddGroup dialogAddGroup = new AddGroup(mainFrame,true);
 			dialogAddGroup.setVisible(true);
+			break;
+		case "associateStudent":
+			AssociateStudentToGroup dialogAssStudent = new AssociateStudentToGroup(mainFrame,true);
+			dialogAssStudent.setVisible(true);
 			break;
 		}
 	}

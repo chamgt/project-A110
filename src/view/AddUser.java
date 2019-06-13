@@ -15,6 +15,7 @@ import java.awt.GridBagConstraints;
 import java.awt.Insets;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.regex.Pattern;
 
 import javax.swing.JTextField;
 
@@ -162,14 +163,25 @@ public abstract class AddUser extends JDialog implements ActionListener {
 	public void actionPerformed(ActionEvent ae) {
 		String action = ae.getActionCommand();
 		System.out.println("test");
-
-		System.out.println("user_login :" + mainFrame.toString());
+		boolean login = (newUserLogin.getText() != "");
+		boolean surnameB = (surname.getText() != "");
+		boolean firstnameB = (firstname.getText() != "");
+		boolean passwordB = (password.getText() != "");
+		boolean idB = Pattern.matches("[0-9]+", id.getText());
+		System.out.println(login);
 		if (action.equals("Cancel")) {
 			dispose();
 		} else if (action.equals("OK")) {
-			add(mainFrame.user_login, newUserLogin.getText(), Integer.parseInt(id.getText()), firstname.getText(),
-					surname.getText(), password.getText());
-			dispose();
+			if (login && surnameB && firstnameB && passwordB && idB) {
+				add(mainFrame.user_login, newUserLogin.getText(), Integer.parseInt(id.getText()), firstname.getText(),
+						surname.getText(), password.getText());
+			} else {
+
+				JOptionPane.showMessageDialog(mainFrame,
+						"There is an error in the information you filled. Please check.", "Error",
+						JOptionPane.ERROR_MESSAGE);
+				dispose();
+			}
 		}
 	}
 }
